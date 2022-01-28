@@ -1,0 +1,58 @@
+{
+    "name": "kangangga/emitter",
+    "description": "Laravel socket.io emitter",
+    "version": "1.0.1",
+    "keywords": [
+        "kangangga",
+        "emitter"
+    ],
+    "homepage": "https://github.com/kangangga/emitter",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Angga Saputra",
+            "email": "masangga.com@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "illuminate/queue": "^8.81",
+        "illuminate/support": "^8.81",
+        "kangangga/elephant.io-fork": "dev-main"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kangangga\\Emitter\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Kangangga\\Emitter\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kangangga\\Emitter\\EmitterServiceProvider"
+            ],
+            "aliases": {
+                "Emitter": "Kangangga\\Emitter\\EmitterFacade"
+            }
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
